@@ -117,3 +117,22 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ]
 }
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file_api_request': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR + '/request.log',
+        },
+    },
+    'loggers': {
+        'request': {
+            'handlers': ['file_api_request'],
+            'level': 'INFO',
+        },
+    },
+}

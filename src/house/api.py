@@ -1,11 +1,12 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 
+from app.middleware import RequestLogViewMixin
 from house.models import House
 from house.serializers import CustomPagination, HouseSerializer, HouseDataSerializer
 
 
-class HouseViewSet(viewsets.ModelViewSet):
+class HouseViewSet(RequestLogViewMixin, viewsets.ModelViewSet):
     queryset = House.objects.all()
     pagination_class = CustomPagination
     serializer_class = HouseSerializer

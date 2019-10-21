@@ -65,6 +65,10 @@ The endpoint house/ is operating and acepting GET and POST requests. Fur retriev
 }
 ```
 
+#### API Request Logging
+
+All requests to the API are registered in a request.log file that can be found in src/ directory once the project is serving
+
 ## Built With
 
 * [Django](https://www.djangoproject.com/) - The web framework used
